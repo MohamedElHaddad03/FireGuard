@@ -34,8 +34,10 @@ class Controller extends BaseController
                 'message' => 'Username or Password are incorrect'
             ],401);
         }
+        $token = $user->createToken('MyAppToken')->plainTextToken;
         $response= [
             'user'=>$user,
+            'token'=>$token,
         ];
                 return response($response,202);
     }
@@ -86,18 +88,30 @@ class Controller extends BaseController
             'content' => 'required|string',
             'id_chat' => 'required',
         ]);
-        $user = Auth::id();
-        print_r($user);
+ 
 
         $comm = new comments();
         $comm->content = $request->input('content');
-        $comm->id_user = Auth::user();
+        $comm->id_user = Auth::user()->id_user;
         $comm->id_chat = $request->input('id_chat');
         $comm->save();
 
         return response()->json(['message' => 'comment added successfully', 'comm' => $comm], 201);
     }
 
+    public function logout(Request $request)
+    {
+        $user = auth()->user();
+    
+        if ($user) {
+            $user->tokens()->delete();
+            return [
+                'message' => 'Logged out'
+            ];
+        }
+    
+    
+    }
 
 
 }
