@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id('id_statistic');
             $table->date('date_debut')->nullable();
             $table->date('date_fin')->nullable();
-            $table->foreignId('id_report')->references('id_report')->on('reports')->onDelete('cascade');
+            $table->foreignId('id_location')->references('id_location')->on('locations')->onDelete('cascade');
             $table->integer('injuries');
             $table->integer('deaths');
-            $table->boolean('state');
+            $table->boolean('state')->default(true);
             $table->timestamps();
         });
     }

@@ -21,4 +21,9 @@ class location extends Model
     {
         return $this->hasMany(location::class, 'id_location');
     }
+
+    public function statistics()
+    {
+        return $this->hasMany(statistics::class, 'id_statistic');
+    }
 }
