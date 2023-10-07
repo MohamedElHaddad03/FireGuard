@@ -15,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('statistics', function (Blueprint $table) {
             $table->id('id_statistic');
-            $table->date('Date_debut')->nullable();
-            $table->date('Date_fin')->nullable();
-            $table->foreignId('id_report')->constrained('reports')->onDelete('cascade');
+            $table->date('date_debut')->nullable();
+            $table->date('date_fin')->nullable();
+            $table->foreignId('id_report')->references('id_report')->on('reports')->onDelete('cascade');
             $table->integer('injuries');
             $table->integer('deaths');
+            $table->boolean('state');
             $table->timestamps();
         });
     }

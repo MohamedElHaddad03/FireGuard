@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class media extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'media_id';
+
+    protected $fillable = [
+        'media_id',
+        'email',
+        'phone',
+    ];
 }

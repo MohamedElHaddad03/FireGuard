@@ -17,13 +17,26 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $primaryKey = 'id_user';
+
     protected $fillable = [
+        'id_user',
         'name',
         'username',
         'CIN',
         'role',
         'password',
     ];
+
+    public function chats()
+    {
+        return $this->hasMany(Chat::class, 'id_user');
+    }
+
+    public function reports()
+    {
+        return $this->hasMany(Report::class, 'id_user');
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -40,7 +53,4 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
 }

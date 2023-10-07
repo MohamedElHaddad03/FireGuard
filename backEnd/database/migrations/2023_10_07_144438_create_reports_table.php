@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id('id_report');
-            $table->foreignId('id_location')->constrained('location')->onDelete('cascade');
+            $table->foreignId('id_user')->references('id_user')->on('users')->onDelete('cascade');
+            $table->foreignId('id_location')->references('id_location')->on('locations')->onDelete('cascade');
             $table->boolean('send_rescue')->default(false);
             $table->string('proof')->nullable();
             $table->string('confirmation')->default('unCheck');
-            $table->boolean('state');
             $table->timestamps();
         });
     }
