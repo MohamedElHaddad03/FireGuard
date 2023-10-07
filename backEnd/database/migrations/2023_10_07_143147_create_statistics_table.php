@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('username')->unique();
-            $table->string('CIN')->unique();
-            $table->string('role')->default('user');
-            $table->string('password');
-            $table->rememberToken();
+        Schema::create('statistics', function (Blueprint $table) {
+            $table->id('id_statistic');
+            $table->date('Date_debut')->nullable();
+            $table->date('Date_fin')->nullable();
+            $table->foreignId('id_report')->constrained('reports')->onDelete('cascade');
+            $table->integer('injuries');
+            $table->integer('deaths');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('statistics');
     }
 };

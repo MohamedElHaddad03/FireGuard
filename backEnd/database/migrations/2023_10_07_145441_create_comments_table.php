@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('username')->unique();
-            $table->string('CIN')->unique();
-            $table->string('role')->default('user');
-            $table->string('password');
-            $table->rememberToken();
+        Schema::create('comments', function (Blueprint $table) {
+            $table->id('id_comment');
+            $table->string('content');
+            $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
+            $table->foreignId('id_chat')->constrained('chats')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('comments');
     }
 };
