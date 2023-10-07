@@ -31,9 +31,4 @@ class reports extends Model
         return $this->belongsTo(Location::class, 'id_location');
     }
 
-    public function statistics()
-    {
-        return $this->hasMany(statistics::class, 'id_report');
-    }
-
 }

@@ -15,16 +15,15 @@ class statistics extends Model
         'id_statistic',
         'date_debut',
         'date_fin',
-        'id_report',
+        'id_localisation',
         'injuries',
         'deaths',
         'state',
     ];
 
-    public function report()
+    public function location()
     {
-        return $this->belongsTo(reports::class, 'id_report');
+        return $this->belongsTo(Location::class, 'id_location');
     }
-
 
 }

@@ -17,9 +17,18 @@ use App\Http\Controllers\Controller;
 Route::middleware(['auth:sanctum'])->group(function () {
 Route::post('/login', [Controller::class, 'login']);
 Route::get('/chats', [Controller::class, 'indexchat']);
+Route::post('/logout', [Controller::class, 'logout']);
 Route::get('/chat/{id}', [Controller::class, 'chat']);
 Route::post('/register', [Controller::class, 'register']);
 Route::post('/comment', [Controller::class, 'commenting']);
+Route::get('/statistics', [Controller::class, 'indexstatistics']);
+Route::get('/reports', [Controller::class, 'indexreports']);
+Route::put('/validaterep', [Controller::class, 'validateReport']);
+Route::put('/rejectrep', [Controller::class, 'rejectReport']);
+Route::put('/endfire', [Controller::class, 'endfire']);
+Route::get('/newreport', [Controller::class, 'newreport']);
+Route::get('/newstatistic', [Controller::class, 'newstatistic']);
+Route::get('/closedstatistic', [Controller::class, 'closedstatistic']);
 });
 
 use App\Http\Controllers\MapController;
