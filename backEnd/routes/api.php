@@ -21,3 +21,7 @@ Route::get('/chat/{id}', [Controller::class, 'chat']);
 Route::post('/register', [Controller::class, 'register']);
 Route::post('/comment', [Controller::class, 'commenting']);
 });
+
+use App\Http\Controllers\MapController;
+
+Route::get('/calculate-bounding-box/{latitude}/{longitude}', [MapController::class,'calculateBoundingBox']);
