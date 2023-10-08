@@ -1,0 +1,7 @@
+{
+  "name": "FireGuards_Gov",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
