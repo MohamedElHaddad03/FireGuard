@@ -28,7 +28,7 @@ Route::put('/rejectrep', [Controller::class, 'rejectReport']);
 Route::put('/endfire', [Controller::class, 'endfire']);
 Route::post('/newreport', [Controller::class, 'newreport']);
 Route::post('/newstatistic', [Controller::class, 'newstatistic']);
-Route::put('/closedstatistic', [Controller::class, 'closedstatistic']);
+Route::put('/closedstatistic/{statisticId}', [Controller::class, 'closedstatistic']);
 Route::get('/download/{imageName}', [Controller::class, 'download']);
 });
 
