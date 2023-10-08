@@ -16,6 +16,7 @@ use App\Http\Controllers\Controller;
 */
 Route::middleware(['auth:sanctum'])->group(function () {
 Route::get('/chats', [Controller::class, 'indexchat']);
+Route::post('/chatons', [Controller::class, 'chatons']);
 Route::post('/logout', [Controller::class, 'logout']);
 Route::get('/chat/{id}', [Controller::class, 'chat']);
 Route::post('/comment', [Controller::class, 'commenting']);
