@@ -97,12 +97,13 @@ class Controller extends BaseController
 
     public function indexreports()
 {
-    $rep = reports::with('localisation')
-                  ->whereNotIn('confirmation', ['rejected'])
-                  ->get();
+    $reports = Report::with('user', 'localisation')
+                    ->whereNotIn('confirmation', ['rejected'])
+                    ->get();
 
-    return $rep;
+    return $reports;
 }
+
 
     public function indexstatistics()
     {
