@@ -16,6 +16,11 @@ export class ApiCitizen {
     console.log( response.data);
     return response.data;
   }
+  static async fetchReports() {
+    const response = await axios.get(`${BASE_URL}api/reports`);
+    console.log( response.data);
+    return response.data;
+  }
 }
 
 
