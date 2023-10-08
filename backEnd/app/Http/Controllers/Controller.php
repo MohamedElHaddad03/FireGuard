@@ -202,12 +202,9 @@ public function newstatistic(Request $request)
         return response()->json(['message' => 'Statistic created successfully', 'statistic' => $statistic], 201);
     }
 
-    public function closedstatistic(Request $request, $statisticId)
+    public function closedstatistic($statisticId)
     {
 
-        $request->validate([
-            'date_fin' => 'nullable|date',
-        ]);
 
         $statistic = statistics::find($statisticId);
 
