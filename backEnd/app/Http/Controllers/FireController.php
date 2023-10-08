@@ -67,7 +67,7 @@ class FireController extends Controller
         } else {
             // The request failed
             $status = $response->status();
-            // Handle the error
+            echo "error 404";
         }
 
 
