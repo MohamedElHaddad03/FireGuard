@@ -237,8 +237,8 @@ public function newstatistic(Request $request)
     
         $user= Auth::user()->id_user;
         $chat = new chats();
-        $chat->longitude = $request->input('title');
-        $chat->latitude = $request->input('content');
+        $chat->title = $request->input('title');
+        $chat->content = $request->input('content');
         $chat->id_user = $user;
         $chat->save();
 
