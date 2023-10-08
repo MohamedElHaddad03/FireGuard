@@ -33,91 +33,18 @@
     <ion-buttons  (click)="openMenu()" slot="start">
       <ion-icon name="menu-outline" style="font-size:35px; color: #ec3d15;"></ion-icon>
     </ion-buttons>
-  
+
 
 
 </ion-toolbar>
-  
+
 </ion-header>
 
 <ion-content [fullscreen]="true" id="main-content">
 
  <div *ngIf="selectedTab==='ReportsList'" >
-
-
-  <div class="scrollable-content">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>#45</ion-card-title>
-      </ion-card-header>
-    
-      <ion-card-content style="display: flex; justify-content: center;align-items: center;">
-        A report from Region A!
-      </ion-card-content>
-
-      <div style="display: flex; align-items: center; justify-content: center; gap: 25px;">
-        <ion-button  style=" --background: #0fb100;" expand="block">Approve</ion-button>
-        <ion-button  style=" --background: #ec2315;" expand="block">Refuse</ion-button>
-      </div>
-      
-
-      
-    </ion-card> 
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>#46</ion-card-title>
-      </ion-card-header>
-    
-      <ion-card-content style="display: flex; justify-content: center;align-items: center;">
-        A report from Region B!
-      </ion-card-content>
-      <div style="display: flex; align-items: center; justify-content: center; gap: 25px;">
-        <ion-button  style=" --background: #0fb100;" expand="block">Approve</ion-button>
-        <ion-button  style=" --background: #ec2315;" expand="block">Refuse</ion-button>
-      </div>     
-    </ion-card><ion-card>
-      <ion-card-header>
-        <ion-card-title>#47</ion-card-title>
-      </ion-card-header>
-    
-      <ion-card-content style="display: flex; justify-content: center;align-items: center;">
-        A report from Region C!
-      </ion-card-content>
-      <div style="display: flex; align-items: center; justify-content: center; gap: 25px;">
-        <ion-button  style=" --background: #0fb100;" expand="block">Approve</ion-button>
-        <ion-button  style=" --background: #ec2315;" expand="block">Refuse</ion-button>
-      </div>      
-    </ion-card><ion-card>
-      <ion-card-header>
-        <ion-card-title>#48</ion-card-title>
-      </ion-card-header>
-    
-      <ion-card-content style="display: flex; justify-content: center;align-items: center;">
-        A report from Region D!
-      </ion-card-content>
-      <div style="display: flex; align-items: center; justify-content: center; gap: 25px;">
-        <ion-button  style=" --background: #0fb100;" expand="block">Approve</ion-button>
-        <ion-button  style=" --background: #ec2315;" expand="block">Refuse</ion-button>
-      </div>     
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>#49</ion-card-title>
-      </ion-card-header>
-    
-      <ion-card-content style="display: flex; justify-content: center;align-items: center;">
-        A report from Region E!
-      </ion-card-content>
-      <div style="display: flex; align-items: center; justify-content: center; gap: 25px;">
-        <ion-button  style=" --background: #0fb100;" expand="block">Approve</ion-button>
-        <ion-button  style=" --background: #ec2315;" expand="block">Refuse</ion-button>
-      </div> 
-    </ion-card> 
-    </div>
-
-
-
-</div> 
+<app-report></app-report>
+</div>
 
 
 
@@ -131,7 +58,7 @@
 </div>
 
 <div *ngIf="selectedTab === 'Current'" class="form-container">
-  current 
+  current
 </div>
 
 

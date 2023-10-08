@@ -21,7 +21,7 @@ Route::post('/logout', [Controller::class, 'logout']);
 Route::get('/chat/{id}', [Controller::class, 'chat']);
 Route::post('/comment', [Controller::class, 'commenting']);
 Route::get('/statistics', [Controller::class, 'indexstatistics']);
-Route::get('/reports', [Controller::class, 'indexreports']);
+
 Route::put('/validaterep/{reportId}', [Controller::class, 'validateReport']);
 Route::put('/rejectrep/{reportId}', [Controller::class, 'rejectReport']);
 Route::put('/endfire/{statisticId}', [Controller::class, 'endfire']);
@@ -30,6 +30,8 @@ Route::post('/newstatistic', [Controller::class, 'newstatistic']);
 Route::put('/closedstatistic/{statisticId}', [Controller::class, 'closedstatistic']);
 Route::get('/download/{imageName}', [Controller::class, 'download']);
 });
+Route::get('/reports', [Controller::class, 'indexreports']);
+
 Route::post('/register', [Controller::class, 'register']);
 
 Route::post('/login', [Controller::class, 'login']);

@@ -16,15 +16,16 @@ import { IonButton, IonIcon } from '@ionic/angular';
 @Component({
   selector: 'app-report',
   template: `
-
-
   <div class="scrollable-content">
   <ion-card *ngFor="let report of reports">
     <ion-card-header>
       <ion-card-title>#{{ report.id }}</ion-card-title>
     </ion-card-header>
     <ion-card-content style="display: flex; justify-content: center;align-items: center;">
-      {{ report.content }}
+      {{ report.user.name }}
+    </ion-card-content>
+    <ion-card-content style="display: flex; justify-content: center;align-items: center;">
+      {{ report.location.latitude }} , {{ report.location.longitude }}
     </ion-card-content>
     <div style="display: flex; align-items: center; justify-content: center; gap: 25px;">
       <ion-button  style=" --background: #0fb100;" expand="block">Approve</ion-button>
@@ -49,7 +50,7 @@ export class ReportComponent {
 
   async ngOnInit() {
     try {
-      this.groups = await ApiCitizen.fetchChats();
+      this.reports = await ApiCitizen.fetchReports();
     } catch (error) {
       console.error('Error fetching chats:', error);
     }

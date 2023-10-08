@@ -7,13 +7,14 @@ import { FooterToolBarComponent } from '../footer-tool-bar/footer-tool-bar.compo
 import {  MenuController } from '@ionic/angular';
 import { LocalNotifications } from '@capacitor/local-notifications';
 import { Haptics } from '@capacitor/haptics';
+import { ReportComponent } from './Report.page';  // Adjust the path as per your project structure
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.page.html',
   styleUrls: ['./main.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, MapComponent, FooterToolBarComponent]
+  imports: [IonicModule, CommonModule, FormsModule, MapComponent, FooterToolBarComponent,ReportComponent]
 })
 export class MainPage implements OnInit {
 
@@ -41,7 +42,7 @@ export class MainPage implements OnInit {
 
   async triggerAlarm() {
     await Haptics.vibrate();
-    
+
     const audio = new Audio();
     audio.src = '/src/assets/fire_alarm_at_factory_2.mp3';
     audio.volume = 0.5; // Set the volume to 50%
@@ -59,10 +60,10 @@ export class MainPage implements OnInit {
       ],
     });
   }
-  
 
 
-  
+
+
 
 
   constructor(private menuCtrl: MenuController) { }
