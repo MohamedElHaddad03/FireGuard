@@ -34,3 +34,6 @@ Route::get('/closedstatistic', [Controller::class, 'closedstatistic']);
 use App\Http\Controllers\MapController;
 
 Route::get('/calculate-bounding-box/{latitude}/{longitude}', [MapController::class,'calculateBoundingBox']);
+use App\Http\Controllers\FireController;
+
+Route::get('/compare-fire', [FireController::class,'compareWithFires']);
