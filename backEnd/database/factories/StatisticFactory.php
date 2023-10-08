@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 
-use App\Models\Statistic;
+use App\Models\statistics;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
