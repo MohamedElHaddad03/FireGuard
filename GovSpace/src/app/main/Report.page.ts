@@ -8,7 +8,6 @@ import { FooterToolBarComponent } from '../footer-tool-bar/footer-tool-bar.compo
 import {  MenuController } from '@ionic/angular';
 import { LocalNotifications } from '@capacitor/local-notifications';
 import { Haptics } from '@capacitor/haptics';
-import { GoogleChartsModule } from 'angular-google-charts';
 import { IonButton, IonIcon } from '@ionic/angular';
 
 
@@ -46,7 +45,7 @@ import { IonButton, IonIcon } from '@ionic/angular';
 
 })
 export class ReportComponent {
-  groups: any[] = []; // Assuming groups is an array of objects
+  reports: any[] = []; // Assuming groups is an array of objects
 
   async ngOnInit() {
     try {
