@@ -26,9 +26,10 @@ Route::get('/reports', [Controller::class, 'indexreports']);
 Route::put('/validaterep', [Controller::class, 'validateReport']);
 Route::put('/rejectrep', [Controller::class, 'rejectReport']);
 Route::put('/endfire', [Controller::class, 'endfire']);
-Route::get('/newreport', [Controller::class, 'newreport']);
-Route::get('/newstatistic', [Controller::class, 'newstatistic']);
-Route::get('/closedstatistic', [Controller::class, 'closedstatistic']);
+Route::post('/newreport', [Controller::class, 'newreport']);
+Route::post('/newstatistic', [Controller::class, 'newstatistic']);
+Route::put('/closedstatistic', [Controller::class, 'closedstatistic']);
+Route::get('/download/{imageName}', [Controller::class, 'download']);
 });
 
 use App\Http\Controllers\MapController;

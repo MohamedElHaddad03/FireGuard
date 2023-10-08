@@ -157,7 +157,7 @@ public function newreport(Request $request)
     $request->validate([
         'longitude' => 'required|numeric',
         'latitude' => 'required|numeric',
-        'proof' => 'required|string',
+        'proof' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
     ]);
 
     $location = new location();
@@ -165,11 +165,14 @@ public function newreport(Request $request)
     $location->latitude = $request->input('latitude');
     $location->save();
 
+    $imageName = time() . '.' . $request->image->extension();
+    $request->image->move(public_path('images'), $imageName);
+
     $report = new reports();
     $report->id_user = Auth::id(); 
     $report->id_location = $location->id_location;
     $report->send_rescue = false;
-    $report->proof = $request->input('proof');
+    $report->proof = $imageName;
     $report->confirmation = 'unCheck';
     $report->save();
 
@@ -212,6 +215,17 @@ public function newstatistic(Request $request)
         $statistic->save();
 
         return response()->json(['message' => 'Statistic closed successfully', 'statistic' => $statistic], 200);
+    }
+
+    public function download($imageName)
+    {
+        $path = public_path('images/' . $imageName);
+
+        if (file_exists($path)) {
+            return Response::download($path, $imageName);
+        } else {
+            abort(404);
+        }
     }
 
 
