@@ -82,7 +82,7 @@ class Controller extends BaseController
     {
 
         $request->validate([
-            'content' => 'required|string',
+            'content' => 'required',
             'id_chat' => 'required',
         ]);
         $user = Auth::user()->id_user;
@@ -162,7 +162,7 @@ public function newreport(Request $request)
 
     $location = new location();
     $location->longitude = $request->input('longitude');
-    $location->attitude = $request->input('latitude');
+    $location->latitude = $request->input('latitude');
     $location->save();
 
     $imageName = time() . '.' . $request->image->extension();
@@ -190,7 +190,7 @@ public function newstatistic(Request $request)
 
         $location = new location();
         $location->longitude = $request->input('longitude');
-        $location->attitude = $request->input('latitude');
+        $location->latitude = $request->input('latitude');
         $location->save();
         $statistic = new statistics();
         $statistic->date_debut = now();

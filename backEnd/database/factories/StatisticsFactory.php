@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class StatisticFactory extends Factory
+class StatisticsFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -22,7 +22,7 @@ class StatisticFactory extends Factory
         return [
             'date_debut' => $this->faker->date,
             'date_fin' => $this->faker->date,
-            'id_location' => \App\Models\Location::factory(),
+            'id_location' => \App\Models\Location::factory()->create()->id_location,
             'injuries' => $this->faker->numberBetween(0, 100),
             'deaths' => $this->faker->numberBetween(0, 50),
             'state' => $this->faker->boolean,

@@ -19,7 +19,7 @@ class LocationFactory extends Factory
     {
         return [
             'longitude' => $this->faker->longitude,
-            'attitude' => $this->faker->latitude,
+            'latitude' => $this->faker->latitude,
             'created_at' => now(),
             'updated_at' => now(),
         ];

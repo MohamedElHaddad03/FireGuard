@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('chats', function (Blueprint $table) {
             $table->id('id_chat');
             $table->string('title');
-            $table->string('content');
+            $table->longText('content');
             $table->foreignId('id_user')->references('id_user')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
