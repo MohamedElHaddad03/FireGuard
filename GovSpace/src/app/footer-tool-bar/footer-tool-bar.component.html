@@ -1,0 +1,34 @@
+<ion-footer>
+
+  <ion-toolbar>
+    <div class="footer-toolbar">
+      
+     
+      <div class="icon-label" (click)="gotoReportsList()">
+        <ion-icon  [class.active]="activeTab === 'ReportsList'" class="reports-icon" [name]="activeTab === 'ReportsList' ? 'file-tray-full' : 'file-tray-full-outline'"></ion-icon>
+        <ion-label [class.active]="activeTab === 'ReportsList'">Reports</ion-label>
+      </div>
+      
+      <div class="icon-label" (click)="gotoStatistics()">
+        <ion-icon  [class.active]="activeTab === 'Statistics'"class="statistics-icon" [name]="activeTab === 'Statistics' ? 'stats-chart' : 'stats-chart-outline'"></ion-icon>
+        <ion-label [class.active]="activeTab === 'Statistics'">Statistics</ion-label>
+      </div>
+      
+      <div class="icon-label" (click)="gotoEscapePlan()">
+        <ion-icon [class.active]="activeTab === 'EscapePlan'" class="escape-icon" [name]="activeTab === 'EscapePlan' ? 'Document' : 'Document-outline'"></ion-icon>
+        <ion-label [class.active]="activeTab === 'EscapePlan'">Escape Plan</ion-label>
+      </div>
+      
+      <div class="icon-label" (click)="gotoCurrent()">
+        <ion-icon [class.active]="activeTab === 'Current'" class="current-icon" [name]="activeTab === 'Current' ? 'videocam' : 'videocam-outline'"></ion-icon>
+        <ion-label [class.active]="activeTab === 'Current'">Currently</ion-label>
+      </div>
+      
+  
+      </div>
+
+    
+
+  </ion-toolbar>
+
+</ion-footer>
