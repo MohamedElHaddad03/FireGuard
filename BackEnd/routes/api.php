@@ -16,7 +16,6 @@ use App\Http\Controllers\FireController;
 |
 */
 Route::middleware(['auth:sanctum'])->group(function () {
-Route::get('/chats', [Controller::class, 'indexchat']);
 Route::post('/chatons', [Controller::class, 'chatons']);
 Route::post('/logout', [Controller::class, 'logout']);
 Route::get('/chat/{id}', [Controller::class, 'chat']);
@@ -34,6 +33,8 @@ Route::get('/download/{imageName}', [Controller::class, 'download']);
 Route::post('/register', [Controller::class, 'register']);
 
 Route::post('/login', [Controller::class, 'login']);
+Route::get('/chats', [Controller::class, 'indexchat']);
+
 
 
 Route::get('/calculate-bounding-box/{latitude}/{longitude}', [MapController::class,'calculateBoundingBox']);

@@ -8,13 +8,18 @@ import {  MenuController } from '@ionic/angular';
 import { LocalNotifications } from '@capacitor/local-notifications';
 import { Haptics } from '@capacitor/haptics';
 import { GoogleChartsModule } from 'angular-google-charts';
+import {ChatComponent} from './Chat.page';
+
+
+
+
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.page.html',
   styleUrls: ['./main.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, MapComponent, FooterToolBarComponent,GoogleChartsModule]
+  imports: [IonicModule, CommonModule, FormsModule, MapComponent, FooterToolBarComponent,GoogleChartsModule,ChatComponent]
 })
 export class MainPage implements OnInit {
 
@@ -42,7 +47,7 @@ export class MainPage implements OnInit {
 
   async triggerAlarm() {
     await Haptics.vibrate();
-    
+
     const audio = new Audio();
     audio.src = '/src/assets/fire_alarm_at_factory_2.mp3';
     audio.volume = 0.5; // Set the volume to 50%
@@ -60,14 +65,14 @@ export class MainPage implements OnInit {
       ],
     });
   }
-  
+
 
 
   constructor(private menuCtrl: MenuController) { }
 
   ngOnInit() {
     LocalNotifications.requestPermissions();
-    
+
   }
 
 }

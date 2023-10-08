@@ -22,8 +22,8 @@ class ReportsFactory extends Factory
             'id_user' => \App\Models\User::factory(),
             'id_location' => \App\Models\Location::factory(),
             'send_rescue' => $this->faker->boolean,
-            'proof' => $this->faker->imageUrl(), 
-            'confirmation' => $this->faker->randomElement(['unCheck', 'rejected', 'validatedS']),
+            'proof' => $this->faker->imageUrl(),
+            'confirmation' => $this->faker->randomElement(['unCheck', 'rejected', 'validated']),
             'created_at' => now(),
             'updated_at' => now(),
         ];
