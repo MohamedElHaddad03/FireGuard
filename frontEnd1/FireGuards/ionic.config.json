@@ -1,7 +1,0 @@
-{
-  "name": "FireGuards",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}
