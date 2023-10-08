@@ -5,9 +5,8 @@ ion-content{
 }
 
 ion-content{
-    ion-button{
-        --background: #6058fc ;
-    }
+    
+    overflow-y: hidden;
 }
 
 .transparent_header{
@@ -15,6 +14,15 @@ ion-content{
     z-index: 1;
 }
   
+.button-above-scroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 8px;
+}
+
   .settings-icon{
     color:#6058fc;
     width: 30px;
@@ -23,4 +31,327 @@ ion-content{
   }
 
   
+  .seperating-line{
+    background-color: black;
+    height: 1px;
+    width: 80%;
+  }
+
+
+  .community-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.scrollable-content {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.donate-button {
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    padding: 4px;
+    border-top: 1px solid #ccc;
+}
+
+.wallet-icon{
+
+padding: 3px;
+}
+
+.add-button-container{
+    margin-left: 8px;
+    margin-right: auto; 
+    margin-bottom: 8px;
+    align-self: flex-end;
+}
+.add-button{
+    padding: 4px;
+}
+
+
+/* Add this CSS to your stylesheet */
+
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.radio-group {
+    margin-top: 10px;
+}
+
+
+
+
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.popup button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+ 
+  .popup-container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+    ion-card {
+      width: 120px;
+      margin: 0px 2px 2px 2px;
+      padding: 2px;
+
+       /* Make sure the card doesn't exceed its container */
+    }
+  }
   
+ .home-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+  
+  
+
+  
+  .buttons-container {
+    margin-top: 10px; /* Add some space between the map and buttons */
+  }
+  
+
+  .popup {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: auto;
+    display: flex;
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: space-between; /* Put space between children */
+    height: 500px; /* Make the popup take full height */
+}
+
+.map-container {
+    width: 350px;
+    height: 400px;
+}
+
+.buttons-container {
+    text-align: center; /* Center the buttons horizontally */
+}
+
+
+
+ion-card {
+    margin: 20px;
+    max-width: 600px;
+    background-color: #f8f8f8;
+  }
+  
+  ion-card-header {
+    font-size: 1.5em;
+    text-align: center;
+  }
+  
+  ion-card-content {
+    font-size: 1.1em;
+  }
+  
+  .fire-causes-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .fire-causes-list li {
+    margin: 10px 0;
+  }
+  
+  .fire-causes-list li:before {
+    content: "\2022";  /* Bullet point character */
+    color: #3498db;   /* Color of the bullet point */
+    font-size: 1.2em;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .fire-causes-list li:last-child {
+    margin-bottom: 0;
+  }
+  
+
+
+  .custom-card {
+  position: relative;
+}
+
+.background0 {
+  background-image: url('/assets/10.jpeg'); 
+  background-size: cover;
+  filter: blur(2px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.9; /* Adjust opacity if needed */
+}
+
+.background2 {
+    background-image: url('/assets/11.jpg'); /* Replace with your image path */
+    background-size: cover;
+    filter: blur(2px); /* Adjust the blur level as needed */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7; /* Adjust opacity if needed */
+  }
+  .background3 {
+    background-image: url('/assets/12.jpg'); /* Replace with your image path */
+    background-size: cover;
+    filter: blur(2px); /* Adjust the blur level as needed */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7; /* Adjust opacity if needed */
+  }
+  .background4 {
+    background-image: url('/assets/13.jpg'); /* Replace with your image path */
+    background-size: cover;
+    filter: blur(2px); /* Adjust the blur level as needed */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7; /* Adjust opacity if needed */
+  }
+  .background5 {
+    background-image: url('/assets/14.webp'); /* Replace with your image path */
+    background-size: cover;
+    filter: blur(2px); /* Adjust the blur level as needed */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7; /* Adjust opacity if needed */
+  }
+  .background6 {
+    background-image: url('/assets/15.jpg'); /* Replace with your image path */
+    background-size: cover;
+    filter: blur(2px); /* Adjust the blur level as needed */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7; /* Adjust opacity if needed */
+  }
+
+
+  .input-location {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.radio-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 8px;
+}
+
+.input-file {
+    display: none; /* Hide the default input */
+}
+
+.file-input-label {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+.file-input-label:hover {
+    background-color: #eaeaea;
+}
+
