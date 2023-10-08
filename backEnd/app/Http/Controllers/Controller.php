@@ -32,8 +32,10 @@ class Controller extends BaseController
                 'message' => 'Username or Password are incorrect'
             ],401);
         }
+        $token = $user->createToken('MyAppToken')->plainTextToken;
         $response= [
             'user'=>$user,
+            'token'=>$token,
         ];
                 return response($response,202);
     }
