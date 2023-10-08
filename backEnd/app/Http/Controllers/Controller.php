@@ -42,7 +42,7 @@ class Controller extends BaseController
 
     public function indexchat()
     {
-       
+
         $chat = chats::with('user')
                               ->get();
 
@@ -80,7 +80,7 @@ class Controller extends BaseController
 
     public function commenting(Request $request)
     {
-        
+
         $request->validate([
             'content' => 'required|string',
             'id_chat' => 'required',
@@ -106,7 +106,7 @@ class Controller extends BaseController
 
     public function indexstatistics()
     {
-       
+
         $rep = statistics::where('state','true')
                             ->get();
 
@@ -162,14 +162,14 @@ public function newreport(Request $request)
 
     $location = new location();
     $location->longitude = $request->input('longitude');
-    $location->latitude = $request->input('latitude');
+    $location->attitude = $request->input('latitude');
     $location->save();
 
     $imageName = time() . '.' . $request->image->extension();
     $request->image->move(public_path('images'), $imageName);
 
     $report = new reports();
-    $report->id_user = Auth::id(); 
+    $report->id_user = Auth::id();
     $report->id_location = $location->id_location;
     $report->send_rescue = false;
     $report->proof = $imageName;
@@ -182,14 +182,19 @@ public function newreport(Request $request)
 public function newstatistic(Request $request)
     {
         $request->validate([
-            'id_location' => 'required|exists:locations,id_location',
+            'longitude' => 'required',
+            'latitude' => 'required',
             'injuries' => 'required|integer',
             'deaths' => 'required|integer',
         ]);
 
+        $location = new location();
+        $location->longitude = $request->input('longitude');
+        $location->attitude = $request->input('latitude');
+        $location->save();
         $statistic = new statistics();
         $statistic->date_debut = now();
-        $statistic->id_location = $request->input('id_location');
+        $statistic->id_location = $location->id_location;
         $statistic->injuries = $request->input('injuries');
         $statistic->deaths = $request->input('deaths');
         $statistic->save();
@@ -210,7 +215,7 @@ public function newstatistic(Request $request)
             return response()->json(['message' => 'Statistic not found.'], 404);
         }
 
-        $statistic->date_fin = now(); 
+        $statistic->date_fin = now();
         $statistic->state = false;
         $statistic->save();
 
@@ -234,7 +239,7 @@ public function newstatistic(Request $request)
             'title' => 'required|string',
             'content' => 'required',
         ]);
-    
+
         $user= Auth::user()->id_user;
         $chat = new chats();
         $chat->title = $request->input('title');

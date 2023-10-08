@@ -3,7 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
-
+use App\Http\Controllers\MapController;
+use App\Http\Controllers\FireController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -34,9 +35,8 @@ Route::post('/register', [Controller::class, 'register']);
 
 Route::post('/login', [Controller::class, 'login']);
 
-use App\Http\Controllers\MapController;
 
 Route::get('/calculate-bounding-box/{latitude}/{longitude}', [MapController::class,'calculateBoundingBox']);
-use App\Http\Controllers\FireController;
+
 
 Route::get('/compare-fire/{latitude}/{longitude}', [FireController::class,'compareWithFires']);
