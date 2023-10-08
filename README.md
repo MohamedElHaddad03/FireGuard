@@ -1,5 +1,5 @@
 # FireGuard
-Commands to run the application :
+Commands to run the application (use a raw visualisation):
 'cd backend 
 composer install 
 php artisan serv
