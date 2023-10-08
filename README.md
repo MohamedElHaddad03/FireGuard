@@ -1,6 +1,6 @@
 # FireGuard
 Commands to run the application :
-'cd backend \n
+'cd backend 
 composer install 
 php artisan serv
 cd ..
