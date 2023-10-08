@@ -52,9 +52,9 @@ class FireController extends Controller
         return $distance;
     }
 
-    public function compareWithFires()
+    public function compareWithFires($yourLatitude,$yourLongitude)
     {
-        $yourLatitude= 19.40436;$yourLongitude = -156.28375;
+
         $currentDate = date('Y-m-d');
         $url = "https://firms.modaps.eosdis.nasa.gov/api/country/csv/bbf49ab91b9ed4eed057e704a803400d/VIIRS_SNPP_NRT/USA/1/$currentDate";
 

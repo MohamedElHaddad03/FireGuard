@@ -39,4 +39,4 @@ use App\Http\Controllers\MapController;
 Route::get('/calculate-bounding-box/{latitude}/{longitude}', [MapController::class,'calculateBoundingBox']);
 use App\Http\Controllers\FireController;
 
-Route::get('/compare-fire', [FireController::class,'compareWithFires']);
+Route::get('/compare-fire/{latitude}/{longitude}', [FireController::class,'compareWithFires']);
