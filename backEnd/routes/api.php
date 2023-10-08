@@ -15,11 +15,9 @@ use App\Http\Controllers\Controller;
 |
 */
 Route::middleware(['auth:sanctum'])->group(function () {
-Route::post('/login', [Controller::class, 'login']);
 Route::get('/chats', [Controller::class, 'indexchat']);
 Route::post('/logout', [Controller::class, 'logout']);
 Route::get('/chat/{id}', [Controller::class, 'chat']);
-Route::post('/register', [Controller::class, 'register']);
 Route::post('/comment', [Controller::class, 'commenting']);
 Route::get('/statistics', [Controller::class, 'indexstatistics']);
 Route::get('/reports', [Controller::class, 'indexreports']);
@@ -31,6 +29,9 @@ Route::post('/newstatistic', [Controller::class, 'newstatistic']);
 Route::put('/closedstatistic/{statisticId}', [Controller::class, 'closedstatistic']);
 Route::get('/download/{imageName}', [Controller::class, 'download']);
 });
+Route::post('/register', [Controller::class, 'register']);
+
+Route::post('/login', [Controller::class, 'login']);
 
 use App\Http\Controllers\MapController;
 
